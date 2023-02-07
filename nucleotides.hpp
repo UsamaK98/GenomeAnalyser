@@ -2,10 +2,10 @@
 using namespace std;
 
 struct nucleotides {
-    int countA;
-    int countC;
-    int countG;
-    int countT;
+    long int countA;
+    long int countC;
+    long int countG;
+    long int countT;
 
     nucleotides(){
         countA=countC=countG=countT=0;
