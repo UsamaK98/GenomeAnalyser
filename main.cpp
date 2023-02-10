@@ -49,10 +49,10 @@ void analyzeGenome(string fname, scaffold** s2, int* n, vector<char>& data){
           
         } else {
           char* temp = stringToCharArray(line);
-          for (int k=0;k<lineSize;k++) 
+          for (int k=0;k<lineSize;k++) {
             data.push_back(temp[k]);
-            
-          c++;
+          	c++  ;
+          }
         }
         s[i-1].size=c;
         //cout << line << endl;
@@ -82,6 +82,9 @@ void countNucleotides(vector<char>& str) {
         break;
       case 'T':
         ++c.countT;
+        break;
+      case 'N':
+        ++c.countN;
         break;
       default:
         break;
@@ -117,7 +120,7 @@ scaffold findSmallest (scaffold* sArr, int s) {
 }
 
 //following function finds the average scaffold length
-long double findAvergeLength(scaffold* sArr, int s) {
+int findAvergeLength(scaffold* sArr, int s) {
   long int totalLen = 0;
   for (int i=0;i<s;++i){
     totalLen+=sArr[i].size;
@@ -126,7 +129,7 @@ long double findAvergeLength(scaffold* sArr, int s) {
 }
 
 //following function finds the percentage of GC nucleotides present in the genome, index "0" correspons to "G"
-void findPercentage(vector<char>& data, int* arr) {
+void findPercentage(vector<char>& data, double* arr) {
   
   int totalG = 0;
   int totalC = 0;
@@ -153,7 +156,7 @@ int main(int argc, char** argv) {
     scaffold* scaffoldArray;
     int* numScaffolds = new int(0);
     vector<char> data; 
-    int* percents = new int [2];
+    double* percents = new double [2];
 
 
     //calling the main file reading and genome analyzer function
