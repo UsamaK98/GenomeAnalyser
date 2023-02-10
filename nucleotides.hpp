@@ -9,7 +9,7 @@ struct nucleotides {
     long int countN;
 
     nucleotides(){
-        countA=countC=countG=countT=0;
+        countN=countA=countC=countG=countT=0;
     }
 
     void printCount(){
